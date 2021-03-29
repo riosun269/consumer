@@ -1,0 +1,5 @@
+user-service:
+  base-url: "http://localhost:8090"
+
+server:
+  port: 8091
