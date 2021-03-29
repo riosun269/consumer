@@ -53,6 +53,7 @@
         <artifactId>maven</artifactId>
         <version>4.1.11</version>
         <configuration>
+          <projectVersion>${pact.consumer.version}</projectVersion>
           <pactBrokerUrl>${pact.broker.url}</pactBrokerUrl>
           <pactBrokerToken>${pact.broker.token}</pactBrokerToken>
           <pactBrokerAuthenticationScheme>Bearer</pactBrokerAuthenticationScheme>
