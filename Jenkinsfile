@@ -9,6 +9,7 @@ pipeline {
 
     environment {
         BRANCH_NAME = env.GIT_BRANCH.replace("origin/", "")
+        GIT_COMMIT = """${sh('git log --format=format:%s -1')}"""
     }
 
     stages {
@@ -28,8 +29,8 @@ pipeline {
         }
         stage('Publish Pacts') {
             steps {
-                sh 'GIT_COMMIT=$(git log --format=format:%s -1)'
-                sh 'mvn pact:publish -Dpact.consumer.version=$GIT_COMMIT -Dpact.tag=${BRANCH_NAME} -Dpact.broker.url=http://riosun269.pactflow.io -Dpact.broker.token=FMGUYGlb1IMOAnLCBUNmOQ'
+                //sh 'GIT_COMMIT=$(git log --format=format:%s -1)'
+                sh 'mvn pact:publish -Dpact.consumer.version=${GIT_COMMIT} -Dpact.tag=${BRANCH_NAME} -Dpact.broker.url=http://riosun269.pactflow.io -Dpact.broker.token=FMGUYGlb1IMOAnLCBUNmOQ'
             }
         }
         /*stage('Check Pact Verifications') {
