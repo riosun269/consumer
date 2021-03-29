@@ -55,10 +55,10 @@
         <configuration>
           <projectVersion>${pact.consumer.version}</projectVersion>
           <pactBrokerUrl>${pact.broker.url}</pactBrokerUrl>
-          <pactBrokerToken>${pact.broker.token}</pactBrokerToken>
-          <pactBrokerAuthenticationScheme>Bearer</pactBrokerAuthenticationScheme>
+          <!--pactBrokerToken>${pact.broker.token}</pactBrokerToken-->
+          <!--pactBrokerAuthenticationScheme>Bearer</pactBrokerAuthenticationScheme-->
           <tags>
-            <tag>${pact.tag}</tag>
+            <!--tag>${pact.tag}</tag-->
           </tags>
           <reports>
             <report>console</report>
