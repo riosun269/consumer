@@ -2,12 +2,25 @@
 pipeline {
 
   agent any
+  tools {
+    jdk 'java8'
+    maven 'Maven3.5'
+  }
 
   environment {
       BRANCH_NAME=env.GIT_BRANCH.replace("origin/", "master")
   }
 
   stages {
+    stage ('Initialize') {
+      steps {
+        sh '''
+              echo "PATH = ${PATH}"
+              echo "M2_HOME = ${M2_HOME}"
+              echo "JAVA_HOME = ${JAVA_HOME}"
+            '''
+      }
+    }
     stage('Build') {
       steps {
         dir('messaging-app') {
