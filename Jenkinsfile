@@ -23,16 +23,12 @@ pipeline {
     }
     stage('Build') {
       steps {
-        dir('messaging-app') {
-           sh 'mvn clean verify'
-        }
+        sh 'mvn clean verify'
       }
     }
     stage('Publish Pacts') {
       steps {
-        dir('messaging-app') {
-           sh 'mvn pact:publish -Dpact.consumer.version=${GIT_COMMIT} -Dpact.tag=${BRANCH_NAME} -Dpact.broker.url=http://riosun269.pactflow.io -Dpact.broker.token=FMGUYGlb1IMOAnLCBUNmOQ'
-        }
+        sh 'mvn pact:publish -Dpact.consumer.version=${GIT_COMMIT} -Dpact.tag=${BRANCH_NAME} -Dpact.broker.url=http://riosun269.pactflow.io -Dpact.broker.token=FMGUYGlb1IMOAnLCBUNmOQ'
       }
     }
     /*stage('Check Pact Verifications') {
