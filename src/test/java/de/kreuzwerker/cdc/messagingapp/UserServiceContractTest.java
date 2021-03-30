@@ -63,11 +63,11 @@ public class UserServiceContractTest {
 
         return builder.given(
             "User 1 exists")
-            .uponReceiving("A request to /users/3")
-            .path("/users/3")
+            .uponReceiving("A request to /users/4")
+            .path("/users/4")
             .method("GET")
             .willRespondWith()
-            .status(204)
+            .status(200)
             .body(body)
             .toPact();
 
