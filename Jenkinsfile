@@ -38,7 +38,7 @@ pipeline {
             sh 'curl -LO https://github.com/pact-foundation/pact-ruby-standalone/releases/download/v1.88.45/pact-1.88.45-osx.tar.gz'
             sh 'tar xzf pact-1.88.45-osx.tar.gz'
             dir('pact/bin') {
-              sh './pact-broker can-i-deploy --retry-while-unknown=12 --retry-interval=10 -a messaging-app -b http://127.0.0.1:80 -e $GIT_COMMIT'
+              sh './pact-broker can-i-deploy --retry-while-unknown=12 --retry-interval=10 -a messaging-app -b http://localhost:80 -e $GIT_COMMIT'
             }
           }
         }

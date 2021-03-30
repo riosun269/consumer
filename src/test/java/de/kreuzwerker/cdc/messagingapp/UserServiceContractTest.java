@@ -63,8 +63,8 @@ public class UserServiceContractTest {
 
         return builder.given(
             "User 1 exists")
-            .uponReceiving("A request to /users/4")
-            .path("/users/4")
+            .uponReceiving("A request to /users/5")
+            .path("/users/5")
             .method("GET")
             .willRespondWith()
             .status(200)
@@ -89,7 +89,7 @@ public class UserServiceContractTest {
     @PactVerification(fragment = "pactUserExists")
     @Test
     public void userExists() {
-        final User user = userServiceClient.getUser("4");
+        final User user = userServiceClient.getUser("5");
 
         assertThat(user.getName()).isEqualTo(NAME);
         assertThat(user.getLastLogin()).isEqualTo(LAST_LOGIN);
