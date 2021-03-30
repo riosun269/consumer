@@ -67,7 +67,7 @@ public class UserServiceContractTest {
             .path("/users/3")
             .method("GET")
             .willRespondWith()
-            .status(400)
+            .status(204)
             .body(body)
             .toPact();
 
