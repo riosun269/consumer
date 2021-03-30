@@ -89,7 +89,7 @@ public class UserServiceContractTest {
     @PactVerification(fragment = "pactUserExists")
     @Test
     public void userExists() {
-        final User user = userServiceClient.getUser("3");
+        final User user = userServiceClient.getUser("4");
 
         assertThat(user.getName()).isEqualTo(NAME);
         assertThat(user.getLastLogin()).isEqualTo(LAST_LOGIN);

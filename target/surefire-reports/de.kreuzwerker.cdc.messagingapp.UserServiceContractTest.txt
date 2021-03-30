@@ -1,4 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: de.kreuzwerker.cdc.messagingapp.UserServiceContractTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.352 s - in de.kreuzwerker.cdc.messagingapp.UserServiceContractTest
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.108 s <<< FAILURE! - in de.kreuzwerker.cdc.messagingapp.UserServiceContractTest
+userExists(de.kreuzwerker.cdc.messagingapp.UserServiceContractTest)  Time elapsed: 0.075 s  <<< FAILURE!
+java.lang.AssertionError: 
+Pact Test function failed with an exception, possibly due to Mismatches(mismatches=[UnexpectedRequest(request=	method: GET
+	path: /users/3
+	query: [:]
+	headers: [Accept-encoding:gzip,deflate, Accept:application/json, application/cbor, application/*+json, Connection:Keep-Alive, Host:localhost:8090, User-agent:Apache-HttpClient/4.5.6 (Java/1.8.0_221)]
+	matchers: MatchingRules(rules={})
+	generators: Generators(categories={})
+	body: OptionalBody(state=EMPTY, value=))])
+	at de.kreuzwerker.cdc.messagingapp.UserServiceContractTest.userExists(UserServiceContractTest.java:92)
+
